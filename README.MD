@@ -7,7 +7,7 @@ In theory all you have to do to get this behavior is set `NIX_BUILD_SHELL` to zs
 
 If you use the `--run` argument to execute something inside the `nix-shell` and then return it will still be run using bash since we only need zsh for interactive shells.
 
-Additionally this plugin passes what packages are specified to the shell in `NIX_SHELL_PACKAGES`. The main purpose for this is so that they may be printed in the promt.
+Additionally this plugin passes what packages are specified to the shell in `NIX_SHELL_PACKAGES`. The main purpose for this is so that they may be printed in the promt. Take a look at this [variant of the agnoster theme](https://gist.github.com/chisui/0d12bd51a5fd8e6bb52e6e6a43d31d5e#file-agnoster-nix-zsh-theme) for an example of how this might look.
 
 # Installation
 
