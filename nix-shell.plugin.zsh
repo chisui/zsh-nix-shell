@@ -1,4 +1,5 @@
-export NIX_BUILD_SHELL="$(dirname $0)/scripts/buildShellShim.zsh"
+
+NIX_SHELL_PLUGIN_DIR=${0:a:h}
 
 # extracts packages argument from args and passes them in $NIX_SHELL_PACKAGES variable.
 function nix-shell() {
@@ -21,6 +22,8 @@ function nix-shell() {
     fi
     ARGS=("${ARGS[@]:1}")
   done
-  env NIX_SHELL_PACKAGES="$NIX_SHELL_PACKAGES" $REAL_NIX_SHELL "$@"
+  env NIX_SHELL_PACKAGES="$NIX_SHELL_PACKAGES" \
+      NIX_BUILD_SHELL="$NIX_SHELL_PLUGIN_DIR/scripts/buildShellShim.zsh" \
+      $REAL_NIX_SHELL "$@"
 }
 
