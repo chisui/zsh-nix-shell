@@ -1,5 +1,5 @@
 if [ $1 = "--rcfile" ]; then
-  # we ignore anything that is passed as an rc file. Fuckit!
+  # as last step of rc file start zsh
   echo -e "\nzsh" >> $2
   bash $2
 else

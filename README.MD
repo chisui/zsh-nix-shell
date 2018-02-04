@@ -21,7 +21,3 @@ Clone this repository and add the following to your `~/.zshrc`.
 
     source /path/to/zsh-nix-shell/nix-shell.plugin.zsh
 
-# Known issues
-
-- This plugin currently does not work in with `--command` as it passes the command to execute inside a bash specific `--rcfile`.
-
