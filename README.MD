@@ -9,6 +9,8 @@ If you use the `--run` argument to execute something inside the `nix-shell` and 
 
 Additionally this plugin passes what packages are specified to the shell in `NIX_SHELL_PACKAGES`. The main purpose for this is so that they may be printed in the promt. Take a look at this [variant of the agnoster theme](https://gist.github.com/chisui/0d12bd51a5fd8e6bb52e6e6a43d31d5e#file-agnoster-nix-zsh-theme) for an example of how this might look.
 
+![example prompt](https://gist.githubusercontent.com/chisui/0d12bd51a5fd8e6bb52e6e6a43d31d5e/raw/8787d8e234e895b2c74194936290a0da9be539ff/example.png)
+
 # Installation
 
 ## Oh-My-ZSH
