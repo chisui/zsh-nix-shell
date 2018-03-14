@@ -22,7 +22,7 @@ This plugin passes certain arguments of `nix-shell` as environment variables to 
 Argument      | Variable              | Notes
 ------------- | --------------------- | -----
 `packages...` | `NIX_SHELL_PACKAGES`  | Passed unaltered.
-`path`        | `NiX_SHELL_FILE_PATH` | If `-p|--packages` is not used this Variable will always be present. The current working directory is always prepended to the variable. It also searches for any `shell.nix` or `default.nix` files if the `path` is a directory.
+`path`        | `NiX_SHELL_FILE_PATH` | If `-p\|--packages` is not used this Variable will always be present. The current working directory is always prepended to the variable. It also searches for any `shell.nix` or `default.nix` files if the `path` is a directory.
 
 These variables can be used inside a theme to customize. Take a look at this [variant of the agnoster theme](https://gist.github.com/chisui/0d12bd51a5fd8e6bb52e6e6a43d31d5e#file-agnoster-nix-zsh-theme) for an example of how this might look.
 
