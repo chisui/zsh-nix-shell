@@ -28,11 +28,13 @@ These variables can be used inside a theme to customize. Take a look at this [va
 
 ![example prompt](https://gist.githubusercontent.com/chisui/0d12bd51a5fd8e6bb52e6e6a43d31d5e/raw/8787d8e234e895b2c74194936290a0da9be539ff/example.png)
 
+![example prompt for projects](https://gist.githubusercontent.com/chisui/0d12bd51a5fd8e6bb52e6e6a43d31d5e/raw/9e2981bba3f0695e4705f3ea38cea0a239e5fb7d/exampleProject.png)
+
 # Installation
 
 ## Oh-My-ZSH
 
-    git clone git@github.com:chisui/zsh-nix-shell.git ~/.oh-my-zsh/custom/plugins/nix-shell
+    git clone git@github.com:chisui/zsh-nix-shell.git $ZSH_CUSTOM/plugins/nix-shell
 
 Then add `nix-shell` to the plugins list in `~/.zshrc`.
 
