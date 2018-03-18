@@ -40,23 +40,8 @@ function nix-shell() {
     ARGS=("${ARGS[@]:1}")
   done
 
-  # determine NIX_SHELL_FILE_PATH 
-  if [[ $NIX_SHELL_PACKAGES = "" ]]; then
-    NIX_SHELL_FILE_PATH="$PWD/$NIX_SHELL_FILE_PATH"
-
-    # search for default nix files in directory
-    if [ -d "$NIX_SHELL_FILE_PATH" ]; then
-      if [ -s "${NIX_SHELL_FILE_PATH}shell.nix" ]; then
-        NIX_SHELL_FILE_PATH+="shell.nix"
-      elif [ -s "${NIX_SHELL_FILE_PATH}default.nix" ]; then
-        NIX_SHELL_FILE_PATH+="default.nix"
-      fi
-    fi
-  fi
-
   # call real nix shell
   env NIX_SHELL_PACKAGES="$NIX_SHELL_PACKAGES" \
-      NIX_SHELL_FILE_PATH="$NIX_SHELL_FILE_PATH" \
       NIX_BUILD_SHELL="$NIX_SHELL_PLUGIN_DIR/scripts/buildShellShim.zsh" \
       $REAL_NIX_SHELL "$@"
 }

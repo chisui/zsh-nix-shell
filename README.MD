@@ -17,18 +17,13 @@ If you use the `--run` or `--command` argument to execute something inside the `
 
 ## passed arguments
 
-This plugin passes certain arguments of `nix-shell` as environment variables to the spawned shell:
-
-Argument      | Variable              | Notes
-------------- | --------------------- | -----
-`packages...` | `NIX_SHELL_PACKAGES`  | Passed unaltered.
-`path`        | `NiX_SHELL_FILE_PATH` | If `-p\|--packages` is not used this Variable will always be present. The current working directory is always prepended to the variable. It also searches for any `shell.nix` or `default.nix` files if the `path` is a directory.
+The `packages` argument is passed through as `NIX_SHELL_PACKAGES` to the shell. If this Variable is empty `nix-shell` was called for a specific derivation which is stored in the `name` environment variable.
 
 These variables can be used inside a theme to customize. Take a look at this [variant of the agnoster theme](https://gist.github.com/chisui/0d12bd51a5fd8e6bb52e6e6a43d31d5e#file-agnoster-nix-zsh-theme) for an example of how this might look.
 
 ![example prompt](https://gist.githubusercontent.com/chisui/0d12bd51a5fd8e6bb52e6e6a43d31d5e/raw/8787d8e234e895b2c74194936290a0da9be539ff/example.png)
 
-![example prompt for projects](https://gist.githubusercontent.com/chisui/0d12bd51a5fd8e6bb52e6e6a43d31d5e/raw/9e2981bba3f0695e4705f3ea38cea0a239e5fb7d/exampleProject.png)
+![example prompt for projects](https://gist.githubusercontent.com/chisui/0d12bd51a5fd8e6bb52e6e6a43d31d5e/raw/ea75cad507e2899b9b6d6ce423330641911110d8/exampleProject.png)
 
 # Installation
 
