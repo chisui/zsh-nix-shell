@@ -6,7 +6,6 @@ function nix-shell() {
   local REAL_NIX_SHELL=$(whereis -b nix-shell | sed -e "s/^nix-shell: //")
   local ARGS=( "$@" )
   local NIX_SHELL_PACKAGES=""
-  local NIX_SHELL_FILE_PATH=""
 
   # extract -p|--packages argument into NIX_SHELL_PACKAGES
   local IN_PACKAGES=0
@@ -33,9 +32,6 @@ function nix-shell() {
     # or we have encountered the path argument
     elif [[ $IN_PACKAGES = 1 ]]; then
       NIX_SHELL_PACKAGES+=" $key"
-    else
-      NIX_SHELL_FILE_PATH = "$key"
-      break
     fi
     ARGS=("${ARGS[@]:1}")
   done
