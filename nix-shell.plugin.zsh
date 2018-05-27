@@ -3,7 +3,7 @@ NIX_SHELL_PLUGIN_DIR=${0:a:h}
 
 # extracts packages argument from args and passes them in $NIX_SHELL_PACKAGES variable.
 function nix-shell() {
-  local REAL_NIX_SHELL=${"$(whereis -b nix-shell)"#nix-shell:\ }
+  local REAL_NIX_SHELL=${"$(type -p nix-shell)"#nix-shell\ is\ }
   local ARGS=("$@")
   local NIX_SHELL_PACKAGES=""
 
