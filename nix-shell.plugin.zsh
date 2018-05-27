@@ -3,7 +3,6 @@ NIX_SHELL_PLUGIN_DIR=${0:a:h}
 
 # extracts packages argument from args and passes them in $NIX_SHELL_PACKAGES variable.
 function nix-shell() {
-  local REAL_NIX_SHELL=${"$(type -p nix-shell)"#nix-shell\ is\ }
   local -a ARGS; ARGS=("$@")
   local NIX_SHELL_PACKAGES=""
 
@@ -41,8 +40,8 @@ function nix-shell() {
   done
 
   # call real nix shell
-  env NIX_SHELL_PACKAGES="$NIX_SHELL_PACKAGES" \
-      NIX_BUILD_SHELL="$NIX_SHELL_PLUGIN_DIR/scripts/buildShellShim.zsh" \
-      $REAL_NIX_SHELL "$@"
+  NIX_SHELL_PACKAGES="$NIX_SHELL_PACKAGES" \
+  NIX_BUILD_SHELL="$NIX_SHELL_PLUGIN_DIR/scripts/buildShellShim.zsh" \
+  command nix-shell "$@"
 }
 
