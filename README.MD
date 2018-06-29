@@ -1,8 +1,4 @@
 
-```diff
-- ⚠️ Help for Mac support wanted ⚠️
-```
-
 # zsh in nix-shell
 
 This [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh/) plugin lets you use zsh as the default shell in a `nix-shell` environment. It's recommended to use this in conjunction with [nix-zsh-completions](https://github.com/spwhitt/nix-zsh-completions).
