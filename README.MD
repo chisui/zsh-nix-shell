@@ -35,7 +35,7 @@ If you use the `--run` or `--command` argument to execute something inside the `
 
 ## `--pure`
 
-If you use the `--pure` flag the resulting shell will be whatever the default shell.
+If you use the `--pure` flag the resulting shell will be the default shell.
 
 ## Environment info
 
