@@ -33,6 +33,10 @@ Use `nix-shell` as you did before.
 
 If you use the `--run` or `--command` argument to execute something inside the `nix-shell` and then return it will still be run using bash. In the case of `--command` the interactive shell will still be `zsh`.
 
+## `--pure`
+
+If you use the `--pure` flag the resulting shell will be the default shell.
+
 ## Environment info
 
 If you are inside a `nix-shell` environment `IN_NIX_SHELL` will be set. The value will be `impure` since `--pure` is not supported.
