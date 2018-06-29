@@ -8,6 +8,7 @@ function nix-shell() {
 
   # extract -p|--packages argument into NIX_SHELL_PACKAGES
   local IN_PACKAGES=0
+  local PURE=0
   while [[ ${#ARGS[@]} -gt 0 ]]
   do
     key=${ARGS[1]}
@@ -23,6 +24,10 @@ function nix-shell() {
     then
       IN_PACKAGES=0
       ARGS=("${ARGS[@]:2}")
+
+    elif [[ $key = "--pure" ]]
+    then
+      PURE=1
 
     # skip all other unary arguments 
     elif [[ $key == "-"* ]]
@@ -40,8 +45,14 @@ function nix-shell() {
   done
 
   # call real nix shell
-  NIX_SHELL_PACKAGES="$NIX_SHELL_PACKAGES" \
-  NIX_BUILD_SHELL="$NIX_SHELL_PLUGIN_DIR/scripts/buildShellShim.zsh" \
-  command nix-shell "$@"
+  if [[ $PURE = 1 ]]
+  then
+    # if you use --pure you get bash
+    command nix-shell "$@"
+  else
+    NIX_SHELL_PACKAGES="$NIX_SHELL_PACKAGES" \
+    NIX_BUILD_SHELL="$NIX_SHELL_PLUGIN_DIR/scripts/buildShellShim.zsh" \
+    command nix-shell "$@"
+  fi
 }
 
