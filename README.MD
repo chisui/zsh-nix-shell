@@ -51,6 +51,12 @@ These variables can now be used inside a theme to customize the prompt. Take a l
 
 ![example prompt for projects](https://gist.githubusercontent.com/chisui/0d12bd51a5fd8e6bb52e6e6a43d31d5e/raw/ea75cad507e2899b9b6d6ce423330641911110d8/exampleProject.png)
 
+# Limitations
+
+## Shell hooks
+
+Shell hooks are supported in general. Since they are executed inside of `bash` before the `zsh` shell is spawned they aren't executed in the same environment. This means that things like aliases do not work.
+
 # Contributing
 
 Please do. Pull requests welcome.
