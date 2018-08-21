@@ -16,7 +16,7 @@ function nix-shell() {
     if [[ $key = "-p" || $key = "--packages" ]]
     then
       IN_PACKAGES=1
-      NIX_SHELL_PACKAGES+=${ARGS[2]}
+      NIX_SHELL_PACKAGES+=${NIX_SHELL_PACKAGES:+ }${ARGS[2]}
       ARGS=("${ARGS[@]:1}")
 
     # skip "--arg name value" argument
