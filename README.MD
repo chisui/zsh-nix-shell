@@ -31,11 +31,11 @@ It should be possible to install this plugin through most `zsh` plugin managers.
 
 Use `nix-shell` as you did before.
 
-If you use the `--run` or `--command` argument to execute something inside the `nix-shell` and then return it will still be run using bash. In the case of `--command` the interactive shell will still be `zsh`.
+Commands run with `--run` or `--command` argument are executed in `nix-shell`s default shell. In the case of `--command` you are put into a `zsh` shell afterwords.
 
 ## `--pure`
 
-If you use the `--pure` flag the resulting shell will be the default shell.
+If you use the `--pure` flag the interactive shell will be the default shell.
 
 ## Environment info
 
@@ -55,7 +55,7 @@ These variables can now be used inside a theme to customize the prompt. Take a l
 
 ## Shell hooks
 
-Shell hooks are supported in general. Since they are executed inside of `bash` before the `zsh` shell is spawned they aren't executed in the same environment. This means that things like aliases do not work.
+Shell hooks are supported in general. Since they are executed inside of `bash` before the `zsh` shell is spawned they aren't executed in the same environment. This means that things like aliases wont work.
 
 # Contributing
 
