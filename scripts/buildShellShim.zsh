@@ -5,5 +5,7 @@ if [ $1 = "--rcfile" ]; then
   tmp="$(cat $1)"
   echo ${tmp%exit} > $1
   echo "zsh" >> $1
+  bash $1
+else
+  bash $@
 fi
-bash $1
