@@ -27,6 +27,10 @@ Clone this repository and add the following to your `~/.zshrc`.
 
 It should be possible to install this plugin through most `zsh` plugin managers. If the one of your choice is not supported feel free to open an issue or even better create a pull request.
 
+## MacOS
+
+On MacOS you have to have an `bash` with version `4` or greater. [See Issue 14](https://github.com/chisui/zsh-nix-shell/issues/14)
+
 # Usage
 
 Use `nix-shell` as you did before.
