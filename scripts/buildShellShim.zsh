@@ -6,7 +6,7 @@ if [ "$1" = "--rcfile" ]; then
   shift
   tmp="$(cat $1)"
   echo ${tmp%exit} > $1
-  echo "zsh" >> $1
+  echo $NIX_EXECUTING_SHELL >> $1
   bash $1
 else
   bash "$@"
