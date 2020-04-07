@@ -29,7 +29,7 @@ function nix-shell() {
     then
       PURE=1
 
-    # skip all other unary arguments 
+    # skip all other unary arguments
     elif [[ $key == "-"* ]]
     then
       IN_PACKAGES=0
@@ -52,7 +52,7 @@ function nix-shell() {
   else
     NIX_SHELL_PACKAGES="$NIX_SHELL_PACKAGES" \
     NIX_BUILD_SHELL="$NIX_SHELL_PLUGIN_DIR/scripts/buildShellShim.zsh" \
+    NIX_EXECUTING_SHELL="$SHELL" \
     command nix-shell "$@"
   fi
 }
-
