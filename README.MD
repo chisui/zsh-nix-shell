@@ -13,7 +13,7 @@ The information that `nix-shell` exposes to the environment is also pretty spars
 
 ## Oh-My-ZSH
 
-    git clone git@github.com:chisui/zsh-nix-shell.git $ZSH_CUSTOM/plugins/nix-shell
+    git clone https://github.com/chisui/zsh-nix-shell.git $ZSH_CUSTOM/plugins/nix-shell
 
 Then add `nix-shell` to the plugins list in `~/.zshrc`.
 
@@ -29,7 +29,7 @@ It should be possible to install this plugin through most `zsh` plugin managers.
 
 ## MacOS
 
-On MacOS you have to have an `bash` with version `4` or greater. [See Issue 14](https://github.com/chisui/zsh-nix-shell/issues/14)
+On MacOS you have to have a `bash` with version `4` or greater. [See Issue 14](https://github.com/chisui/zsh-nix-shell/issues/14)
 
 # Usage
 
