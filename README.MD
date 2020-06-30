@@ -21,7 +21,7 @@ git clone https://github.com/chisui/zsh-nix-shell.git $ZSH_CUSTOM/plugins/nix-sh
 
 Then add `nix-shell` to the plugins list in `~/.zshrc`.
 
-### Nixos
+### NixOS
 
 If you have installes `zsh` using `nix` the plugins directory is readonly since it's inside of the nix store.
 To get around this you can override the [`ZSH_CUSTOM` directory](https://github.com/ohmyzsh/ohmyzsh/wiki/Customization#using-another-customization-directory).
