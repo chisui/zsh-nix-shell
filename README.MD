@@ -13,15 +13,33 @@ The information that `nix-shell` exposes to the environment is also pretty spars
 
 ## Oh-My-ZSH
 
-    git clone https://github.com/chisui/zsh-nix-shell.git $ZSH_CUSTOM/plugins/nix-shell
+Clone this repository into your plugins directory
+
+```sh
+git clone https://github.com/chisui/zsh-nix-shell.git $ZSH_CUSTOM/plugins/nix-shell
+```
 
 Then add `nix-shell` to the plugins list in `~/.zshrc`.
+
+### Nixos
+
+If you have installes `zsh` using `nix` the plugins directory is readonly since it's inside of the nix store.
+To get around this you can override the [`ZSH_CUSTOM` directory](https://github.com/ohmyzsh/ohmyzsh/wiki/Customization#using-another-customization-directory).
+Simply create a writable directory inside of your home directory (eg. `$HOME/.config/oh-my-zsh`) and set `ZSH_CUSTOM` to that path inside of your `.zshrc` file.
+
+```sh
+ZSH_CUSTOM=$HOME/.config/oh-my-zsh
+```
+
+After that simply install for `oh-my-zsh` as normal.
 
 ## Plain ZSH
 
 Clone this repository and add the following to your `~/.zshrc`.
 
-    source /path/to/zsh-nix-shell/nix-shell.plugin.zsh
+```sh
+source /path/to/zsh-nix-shell/nix-shell.plugin.zsh
+```
 
 ## home-manager
 
@@ -88,4 +106,3 @@ Shell hooks are supported in general. Since they are executed inside of `bash` b
 # Contributing
 
 Please do. Pull requests welcome.
-
