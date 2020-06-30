@@ -23,6 +23,28 @@ Clone this repository and add the following to your `~/.zshrc`.
 
     source /path/to/zsh-nix-shell/nix-shell.plugin.zsh
 
+## home-manager
+
+Add this repository to the [`plugins` list of your configurations](https://rycee.gitlab.io/home-manager/options.html#opt-programs.zsh.plugins):
+
+```nix
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    plugins = [
+      {
+        name = "zsh-nix-shell";
+        src = pkgs.fetchFromGitHub {
+          owner = "chisui";
+          repo = "zsh-nix-shell";
+          rev = "v0.1.0";
+          sha256 = "0snhch9hfy83d4amkyxx33izvkhbwmindy0zjjk28hih1a9l2jmx";
+        };
+      }
+    ];
+  };
+```
+
 ## Plugin managers
 
 It should be possible to install this plugin through most `zsh` plugin managers. If the one of your choice is not supported feel free to open an issue or even better create a pull request.
