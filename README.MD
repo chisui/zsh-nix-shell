@@ -28,6 +28,7 @@ Clone this repository and add the following to your `~/.zshrc`.
 Add this repository to the [`plugins` list of your configurations](https://rycee.gitlab.io/home-manager/options.html#opt-programs.zsh.plugins):
 
 ```nix
+{
   programs.zsh = {
     enable = true;
     enableCompletion = true;
@@ -43,6 +44,7 @@ Add this repository to the [`plugins` list of your configurations](https://rycee
       }
     ];
   };
+}
 ```
 
 ## Plugin managers
