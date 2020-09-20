@@ -53,6 +53,7 @@ Add this repository to the [`plugins` list of your configurations](https://rycee
     plugins = [
       {
         name = "zsh-nix-shell";
+        file = "nix-shell.plugin.zsh";
         src = pkgs.fetchFromGitHub {
           owner = "chisui";
           repo = "zsh-nix-shell";
