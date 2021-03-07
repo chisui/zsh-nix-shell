@@ -104,6 +104,10 @@ These variables can now be used inside a theme to customize the prompt. Take a l
 
 Shell hooks are supported in general. Since they are executed inside of `bash` before the `zsh` shell is spawned they aren't executed in the same environment. This means that things like aliases wont work.
 
+## Zsh dotfiles
+
+The normal zsh dotfiles are sourced after the nix-shell is opened. This means that you have to take into account that these files may override variables set by nix-shell.
+
 # Contributing
 
 Please do. Pull requests welcome.
