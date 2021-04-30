@@ -1,0 +1,24 @@
+#! /usr/bin/env sh
+
+if [ "$1" = "--rcfile" ]; then
+  # This means the shell should stay open after executing. So we remove the last line which contains 'exit'
+  shift
+  tmp="$(cat $1)"
+  echo ${tmp%exit} > $1
+  cat >> $1 <<EOF
+FPATH=\$(echo 'echo \$FPATH' | ${NIX_EXECUTING_SHELL} --stdin)
+for path in \${PATH//:/ }; do
+  if [[ \$path = /nix/store/* ]]; then
+    path=\${path/%bin/share\/zsh\/site-functions}
+    if [ -d "\$path" ]; then
+      FPATH="\$path:\$FPATH"
+    fi
+  fi
+done
+FPATH=\$FPATH ${NIX_EXECUTING_SHELL}
+EOF
+  bash $1
+else
+  bash "$@"
+fi
+
