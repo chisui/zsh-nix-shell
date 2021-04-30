@@ -11,3 +11,4 @@ if [ "$1" = "--rcfile" ]; then
 else
   bash "$@"
 fi
+

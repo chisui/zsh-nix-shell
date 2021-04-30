@@ -51,7 +51,7 @@ function nix-shell() {
     command nix-shell "$@"
   else
     NIX_SHELL_PACKAGES="$NIX_SHELL_PACKAGES" \
-    NIX_BUILD_SHELL="$NIX_SHELL_PLUGIN_DIR/scripts/buildShellShim.zsh" \
+    NIX_BUILD_SHELL="$NIX_SHELL_PLUGIN_DIR/scripts/buildShellShim" \
     NIX_EXECUTING_SHELL="$SHELL" \
     command nix-shell "$@"
   fi
