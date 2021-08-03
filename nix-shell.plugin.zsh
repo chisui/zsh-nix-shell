@@ -4,7 +4,7 @@ NIX_SHELL_PLUGIN_DIR=${0:a:h}
 # extracts packages argument from args and passes them in $NIX_SHELL_PACKAGES variable.
 function nix-shell() {
   local -a ARGS; ARGS=("$@")
-  local NIX_SHELL_PACKAGES=""
+  local NIX_SHELL_PACKAGES="${NIX_SHELL_PACKAGES}"
 
   # extract -p|--packages argument into NIX_SHELL_PACKAGES
   local IN_PACKAGES=0
