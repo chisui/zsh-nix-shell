@@ -6,7 +6,9 @@ if [ "$1" = "--rcfile" ]; then
   tmp="$(cat $1)"
   echo ${tmp%exit} > $1
   cat >> $1 <<EOF
-FPATH=\$(echo 'echo \$FPATH' | ${NIX_EXECUTING_SHELL} --stdin)
+SHELL=$NIX_EXECUTING_SHELL
+unset NIX_BUILD_SHELL
+FPATH=\$(echo 'echo \$FPATH' | $NIX_EXECUTING_SHELL --stdin)
 for path in \${PATH//:/ }; do
   if [[ \$path = /nix/store/* ]]; then
     path=\${path/%bin/share\/zsh\/site-functions}
@@ -15,7 +17,7 @@ for path in \${PATH//:/ }; do
     fi
   fi
 done
-FPATH=\$FPATH ${NIX_EXECUTING_SHELL}
+FPATH=\$FPATH $NIX_EXECUTING_SHELL
 EOF
   bash $1
 else
