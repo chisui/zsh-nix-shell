@@ -57,8 +57,8 @@ Add this repository to the [`plugins` list of your configurations](https://rycee
         src = pkgs.fetchFromGitHub {
           owner = "chisui";
           repo = "zsh-nix-shell";
-          rev = "v0.2.0";
-          sha256 = "1gfyrgn23zpwv1vj37gf28hf5z0ka0w5qm6286a7qixwv7ijnrx9";
+          rev = "v0.3.0";
+          sha256 = "02nfh76bjhfms4ywjpbhqs2vrv4khzzmscslvdrzxyih0hc5gvjq";
         };
       }
     ];
