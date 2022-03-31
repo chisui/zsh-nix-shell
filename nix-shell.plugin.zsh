@@ -1,6 +1,15 @@
 
 NIX_SHELL_PLUGIN_DIR=${0:a:h}
 
+which bash > /dev/null 2>&1
+if [ "$?" -ne "0" ]; then
+  echo
+  echo "  WARNING: bash is not installed."
+  echo "  for zsh-nix-shell to work bash has to be in PATH"
+  echo
+fi
+
+
 # extracts packages argument from args and passes them in $NIX_SHELL_PACKAGES variable.
 function nix-shell() {
   local -a ARGS; ARGS=("$@")
