@@ -33,6 +33,14 @@ ZSH_CUSTOM=$HOME/.config/oh-my-zsh
 
 After that simply install for `oh-my-zsh` as normal.
 
+## Fig
+
+[Fig](https://fig.io) adds apps, shortcuts, and autocomplete to your existing terminal.
+
+Install `zsh-nix-shell` in just one click.
+
+<a href="https://fig.io/plugins/other/zsh-nix-shell_chisui" target="_blank"><img src="https://fig.io/badges/install-with-fig.svg" /></a>
+
 ## Plain ZSH
 
 Clone this repository and add the following to your `~/.zshrc`.
