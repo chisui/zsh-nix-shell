@@ -59,9 +59,24 @@ function nix-shell() {
     # if you use --pure you get bash
     command nix-shell "$@"
   else
+    NIX_EXECUTING_SHELL=$(readlink /proc/$$/exe)
+    if [[ -z "$NIX_EXECUTING_SHELL" ]] && command -v lsof &> /dev/null
+    then
+      NIX_EXECUTING_SHELL=$(lsof -p $$ | awk '$4=="txt" {print $9}' | head -n 1)
+    fi
+    if [[ -z "$NIX_EXECUTING_SHELL" ]] && command -v zsh &> /dev/null
+    then
+      NIX_EXECUTING_SHELL="zsh"
+    fi
+    if [[ -z "$NIX_EXECUTING_SHELL" ]]
+    then
+      echo "could not determine executing shell. please install `lsof` or `zsh` directly to your PATH"
+      echo "If this error persists create an issue at https://github.com/chisui/zsh-nix-shell/issues/new/choose"
+      return 1
+    fi
     NIX_SHELL_PACKAGES="$NIX_SHELL_PACKAGES" \
     NIX_BUILD_SHELL="$NIX_SHELL_PLUGIN_DIR/scripts/buildShellShim" \
-    NIX_EXECUTING_SHELL=$(readlink /proc/$$/exe) \
+    NIX_EXECUTING_SHELL=$NIX_EXECUTING_SHELL \
     command nix-shell "$@"
   fi
 }
