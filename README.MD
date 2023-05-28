@@ -5,7 +5,7 @@ This [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh/) plugin lets you use
 
 # Motivation
 
-In theory all you need to do to use `zsh` in `nix-shell` is to set `NIX_BUILD_SHELL` to `zsh`. Unfortunatly nix assumes that the `NIX_BUILD_SHELL` is a bash variant and passes bash specific arguments to the shell. To fix this we need a shim that translates these arguments.
+In theory all you need to do to use `zsh` in `nix-shell` is to set `NIX_BUILD_SHELL` to `zsh`. Unfortunatly nix assumes that the `NIX_BUILD_SHELL` is a bash variant and passes bash specific arguments to the shell. To fix this, we need a shim that translates these arguments.
 
 The information that `nix-shell` exposes to the environment is also pretty sparse. It would be nice to know what derivations are included in the current environment for example to display them in the shells prompt. 
 
@@ -25,7 +25,7 @@ Then add `nix-shell` to the plugins list in `~/.zshrc`.
 
 If you have installed `zsh` using `nix` the plugins directory is readonly since it's inside of the nix store.
 To get around this you can override the [`ZSH_CUSTOM` directory](https://github.com/ohmyzsh/ohmyzsh/wiki/Customization#using-another-customization-directory).
-Simply create a writable directory inside of your home directory (eg. `$HOME/.config/oh-my-zsh`) and set `ZSH_CUSTOM` to that path inside of your `.zshrc` file.
+Simply create a writable directory inside of your home directory (e.g. `$HOME/.config/oh-my-zsh`) and set `ZSH_CUSTOM` to that path inside of your `.zshrc` file.
 
 ```sh
 ZSH_CUSTOM=$HOME/.config/oh-my-zsh
@@ -68,7 +68,7 @@ Add this repository to the [`plugins` list of your configurations](https://rycee
 
 ## Plugin managers
 
-It should be possible to install this plugin through most `zsh` plugin managers. If the one of your choice is not supported feel free to open an issue or even better create a pull request.
+It should be possible to install this plugin through most `zsh` plugin managers. If the one of your choice is not supported, feel free to open an issue or even better create a pull request.
 
 ## MacOS
 
@@ -78,7 +78,7 @@ On MacOS you have to have a `bash` with version `4` or greater. [See Issue 14](h
 
 Use `nix-shell` as you did before.
 
-Commands run with `--run` or `--command` argument are executed in `nix-shell`s default shell. In the case of `--command` you are put into a `zsh` shell afterwords.
+Commands run with `--run` or `--command` argument are executed in `nix-shell`s default shell. In the case of `--command` you are put into a `zsh` shell afterwards.
 
 ## `--pure`
 
@@ -102,7 +102,7 @@ These variables can now be used inside a theme to customize the prompt. Take a l
 
 ## Shell hooks
 
-Shell hooks are supported in general. Since they are executed inside of `bash` before the `zsh` shell is spawned they aren't executed in the same environment. This means that things like aliases wont work.
+Shell hooks are supported in general. Since they are executed inside of `bash` before the `zsh` shell is spawned they aren't executed in the same environment. This means that things like aliases won't work.
 
 ## Zsh dotfiles
 
