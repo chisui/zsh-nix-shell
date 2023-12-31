@@ -19,8 +19,8 @@ for path in \${PATH//:/ }; do
 done
 FPATH=\$FPATH $NIX_EXECUTING_SHELL
 EOF
-  bash $1
+  /usr/bin/env bash $1
 else
-  bash "$@"
+  /usr/bin/env bash "$@"
 fi
 
