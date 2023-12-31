@@ -59,7 +59,7 @@ function nix-shell() {
     # if you use --pure you get bash
     command nix-shell "$@"
   else
-    NIX_EXECUTING_SHELL=$(readlink /proc/$$/exe)
+    NIX_EXECUTING_SHELL=$(readlink -f /proc/$$/exe)
     if [[ -z "$NIX_EXECUTING_SHELL" ]] && command -v lsof &> /dev/null
     then
       NIX_EXECUTING_SHELL=$(lsof -p $$ | awk '$4=="txt" {print $9}' | head -n 1)
