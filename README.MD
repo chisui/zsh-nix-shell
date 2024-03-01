@@ -29,7 +29,7 @@ Do so by setting the "custom" attribute in your oh-my-zsh Nix config:
 
 ```nix
   oh-my-zsh = {
-    custom = "${config.users.users.YOURUSERNAME.home}/.config/oh-my-zsh";
+    custom = "/home/YOURUSERNAME/.config/oh-my-zsh";
   };
 ```
 
