@@ -25,10 +25,12 @@ Then add `nix-shell` to the plugins list in `~/.zshrc`.
 
 If you have installed `zsh` using `nix` the plugins directory is readonly since it's inside of the nix store.
 To get around this you can override the [`ZSH_CUSTOM` directory](https://github.com/ohmyzsh/ohmyzsh/wiki/Customization#using-another-customization-directory).
-Simply create a writable directory inside of your home directory (e.g. `$HOME/.config/oh-my-zsh`) and set `ZSH_CUSTOM` to that path inside of your `.zshrc` file.
+Do so by setting the "custom" attribute in your oh-my-zsh Nix config:
 
-```sh
-ZSH_CUSTOM=$HOME/.config/oh-my-zsh
+```nix
+  oh-my-zsh = {
+    custom = "${config.users.users.YOURUSERNAME.home}/.config/oh-my-zsh";
+  };
 ```
 
 After that simply install for `oh-my-zsh` as normal.
